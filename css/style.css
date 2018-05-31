@@ -1,0 +1,603 @@
+/* ==========================================================================
+Project Name: Jumpcut Landing Page Test
+Author: Sam Norton
+========================================================================== */
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800");
+
+/* General Colors */
+:root {
+  --dark-blue: #0c131b;
+  --cyan: #50f8df;
+  --white: #fff;
+  --border: #dcdcdc;
+  --grey: #9ea3a9;
+  --opaque: rgba(0, 0, 0, 0.4);
+  --lightgrey: #f1f1f1;
+  --red: #e43b2c;
+  --darkred: #b72f23;
+  --darkredhover: #cd291a;
+  --borderbox: #2f363e;
+}
+
+/* General CSS */
+html {
+  box-sizing: border-box;
+  /* A system font stack so things load nice and quick! */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 10px;
+  color: var(--white);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background-color: var(--dark-blue);
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.clear {
+  clear: both;
+}
+
+a {
+  color: var(--cyan);
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0px auto;
+}
+
+/* Navbar */
+.navbar-header {
+  margin-top: 60px;
+}
+
+a#logo {
+  width: 160px;
+  height: 31px;
+  background: url("../img/logo.png") no-repeat;
+  display: block;
+  cursor: pointer;
+}
+
+/* Header */
+.hero {
+  margin: 90px 0px;
+}
+
+.hero-text {
+  width: 43%;
+  float: left;
+}
+
+.hero-video {
+  width: 50%;
+  float: right;
+}
+
+.hero-text h4 {
+  color: var(--cyan);
+  font-size: 1.8em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0px 0px 0px 6px;
+}
+
+.hero-text h1 {
+  font-size: 4.9em;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.25em;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.hero-text h3 {
+  font-weight: 300;
+  font-size: 2.4em;
+  font-style: italic;
+  color: var(--border);
+  letter-spacing: 0.05em;
+  margin-top: 0px;
+  line-height: 1.4em;
+}
+
+hr.divider {
+  border: 1px solid #2f363e;
+}
+
+/* Youtuber List Section */
+.youtubers-list {
+  padding: 40px 0px 60px 0px;
+}
+
+.youtubers-list h2 {
+  text-align: center;
+  font-size: 3em;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  margin-bottom: 70px;
+}
+
+.youtuber-info {
+  border: 1px solid var(--borderbox);
+  width: 29%;
+  padding: 30px 40px;
+}
+
+.item1 {
+  float: left;
+  margin-right: 70px;
+}
+
+.item2 {
+  float: left;
+}
+
+.item3 {
+  float: right;
+}
+
+.youtuber-info img {
+  margin: 0 auto;
+  display: block;
+}
+
+h3.title {
+  color: var(--cyan);
+  text-align: center;
+  font-size: 2em;
+  font-weight: 300;
+}
+
+h3.channel {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.youtubers-list h5 {
+  font-size: 1.3em;
+  color: var(--grey);
+  line-height: 0.3em;
+}
+
+.details {
+  padding: 1px 18px;
+}
+
+/* Sign Up Button */
+.btn button {
+  margin: 0px auto;
+  display: block;
+  font-size: 1.8em;
+  color: var(--white);
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid var(--cyan);
+  padding: 10px 16px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.btn button:hover {
+  background-color: var(--cyan);
+  color: var(--dark-blue);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn button:hover .fa-youtube {
+  color: var(--dark-blue);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn {
+  margin: 90px auto 20px auto;
+}
+
+.fa-youtube {
+  color: var(--cyan);
+  margin-right: 20px;
+}
+
+.fa-angle-right {
+  margin-left: 20px;
+}
+
+.btn p {
+  color: var(--grey);
+  font-size: 1.6em;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+/* Footer */
+footer {
+  padding: 50px 0px;
+}
+
+footer p {
+  text-align: center;
+  color: var(--grey);
+  font-size: 1.4em;
+  line-height: 0.8em;
+  letter-spacing: 0.05em;
+}
+
+footer a#logo {
+  margin: 0px auto 35px auto;
+  display: block;
+}
+
+p.copyright {
+  margin-top: 50px;
+}
+
+/* Pop Up*/
+.popup {
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--opaque);
+  opacity: 0;
+  transform: scale(1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.popcontent {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  background-color: var(--white);
+  padding: 20px 50px;
+  width: 46%;
+  border-radius: 0.5rem;
+  transform: translate(-50%, -50%);
+}
+
+.popcontent h1 {
+  font-size: 3em;
+  color: var(--dark-blue);
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.popcontent input[type="text"] {
+  width: 100%;
+  padding: 12px 50px;
+  border: 2px solid var(--grey);
+  margin: 10px auto;
+  background: var(--lightgrey);
+  text-align: center;
+  font-size: 2em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+input#fname {
+  background: url("../img/name.png") no-repeat;
+  background-position: 729px 11px;
+}
+
+input#email {
+  background: url("../img/email.png") no-repeat;
+  background-position: 729px 11px;
+}
+
+.popcontent button#pop-btn {
+  background: var(--red);
+  width: 100%;
+  color: var(--white);
+  padding: 17px 30px;
+  font-size: 1.9em;
+  font-weight: 600;
+  margin: 10px 0px;
+  outline: none !important;
+  -webkit-box-shadow: inset 0 -3px var(--darkred);
+  box-shadow: inset 0 -3px var(--darkred);
+  border: none !important;
+  cursor: pointer;
+}
+
+.popcontent button#pop-btn:hover {
+  background: var(--darkredhover);
+}
+
+p.popdisc {
+  color: var(--grey);
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.fa-lock {
+  font-size: 0.8em;
+}
+
+span.closebtn {
+  position: absolute;
+  background: url("../img/close-btn.png") no-repeat;
+  height: 37px;
+  width: 39px;
+  float: right;
+  text-align: center;
+  cursor: pointer;
+  top: -18px;
+  right: -18px;
+}
+
+.openpopup {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.closepopup {
+  top: -1700px;
+  transform: scale(1);
+  transition: top 0.1s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* Responsive - Media Queries */
+@media only screen and (max-width: 1366px) {
+  .popcontent {
+    top: 41%;
+    width: 61%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .wrapper {
+    width: 80%;
+    max-width: 1024px;
+  }
+
+  .hero-text h4 {
+    font-size: 1.3em;
+  }
+
+  .hero-text h1 {
+    font-size: 3.5em;
+  }
+
+  .hero-text h3 {
+    font-size: 1.4em;
+  }
+
+  .youtuber-info {
+    min-height: 616px;
+  }
+
+  .youtubers-list h2 {
+    font-size: 2.7em;
+  }
+  .youtubers-list h5 {
+    line-height: 1.4em;
+  }
+
+  .item1 {
+    margin-right: 52px;
+  }
+
+  .popcontent {
+    top: 48%;
+    width: 61%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 800px) {
+  .hero-text {
+    float: none;
+    width: 100%;
+  }
+
+  .hero-video {
+    float: none;
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  .hero-text h4 {
+    font-size: 1.6em;
+  }
+
+  .hero-text h1 {
+    font-size: 3.7em;
+  }
+
+  .hero-text h3 {
+    font-size: 1.8em;
+  }
+
+  .item1 {
+    float: none;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .item2 {
+    float: none;
+    width: 70%;
+    margin: 40px auto;
+  }
+
+  .item3 {
+    float: none;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .details {
+    padding: 1px 65px;
+  }
+
+  .youtubers-list h2 {
+    font-size: 3.5em;
+  }
+
+  .popcontent {
+    top: 35%;
+  }
+
+  .popcontent button#pop-btn {
+    font-size: 1.6em;
+  }
+}
+
+@media only screen and (max-width: 411px) {
+  .hero-text {
+    float: none;
+    width: 100%;
+  }
+
+  .hero-video {
+    float: none;
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  .item1 {
+    float: none;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .item2 {
+    float: none;
+    width: 70%;
+    margin: 40px auto;
+  }
+
+  .item3 {
+    float: none;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .details {
+    padding: 1px 0px;
+  }
+
+  .youtubers-list h2 {
+    font-size: 2.5em;
+  }
+
+  .btn button {
+    width: 100%;
+    font-size: 1.4em;
+  }
+  .btn p {
+    font-size: 1.2em;
+  }
+
+  footer p {
+    line-height: 1.3em;
+  }
+
+  h3.channel {
+    font-size: 1.3em;
+  }
+
+  i.fab.fa-youtube,
+  i.fas.fa-angle-right {
+    display: none !important;
+  }
+
+  .popcontent {
+    top: 42%;
+    width: 80%;
+  }
+
+  .popcontent h1 {
+    font-size: 2em;
+  }
+
+  input#fname,
+  input#email {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 1.4em;
+  }
+
+  .popcontent button#pop-btn {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 320) {
+  .youtuber-info {
+    padding: 20px 0px !important;
+  }
+
+  .item1 {
+    width: 100%;
+  }
+
+  .item2 {
+    width: 100%;
+  }
+
+  .item3 {
+    width: 100%;
+  }
+
+  h3.channel {
+    font-size: 1.3em;
+  }
+
+  .youtubers-list h2 {
+    font-size: 2em;
+  }
+
+  button.btn-click {
+    width: 100%;
+    font-size: 1.4em;
+  }
+  .btn p {
+    font-size: 1.2em;
+  }
+
+  footer p {
+    line-height: 1.3em;
+  }
+
+  .popcontent {
+    top: 99%;
+    width: 60%;
+  }
+
+  .popcontent h1 {
+    font-size: 1em;
+  }
+
+  input#fname,
+  input#email {
+    width: 100%;
+    padding: 5px 5px;
+    font-size: 1em;
+  }
+
+  .popcontent button#pop-btn {
+    font-size: 1em;
+  }
+
+  p.popdisc {
+    font-size: 1em;
+  }
+}
